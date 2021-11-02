@@ -1,0 +1,12 @@
+[Unit]
+Description=LVE Exporter
+
+[Service]
+User=prometheus
+Group=prometheus
+EnvironmentFile=/etc/sysconfig/lve_exporter
+ExecStart=/usr/local/bin/lve_exporter $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
+
